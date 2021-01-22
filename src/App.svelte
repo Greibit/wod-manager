@@ -3,7 +3,7 @@
     import Emom from "./components/circuits/Emom.svelte";
     import ForTime from "./components/circuits/ForTime.svelte";
     import Intervals from "./components/circuits/Intervals.svelte";
-import NavBar from "./NavBar.svelte";
+    import NavBar from "./components/layout/NavBar.svelte";
 
     let currentFormComponent;
 
@@ -31,8 +31,7 @@ import NavBar from "./NavBar.svelte";
     }
 </script>
 
-
-<NavBar/>
+<NavBar />
 <main class="mt-10">
     <div class="container mx-auto">
         <div class="flex justify-between">

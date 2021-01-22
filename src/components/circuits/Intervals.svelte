@@ -1,6 +1,6 @@
 <script lang="ts">
     import Exercise from "../../domain/exercise";
-    import ExerciseFormList from "../ExerciseFormList.svelte";
+    import ExerciseFormList from "../exercises/ExerciseFormList.svelte";
 
     let exercises = [new Exercise()];
 

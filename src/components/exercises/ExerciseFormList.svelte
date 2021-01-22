@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Exercise from "../domain/exercise";
+    import Exercise from "../../domain/exercise";
 
     export let exercises: Exercise[];
     export let ignoreRepsFields = false;
