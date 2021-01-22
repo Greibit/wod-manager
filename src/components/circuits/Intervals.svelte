@@ -1,0 +1,31 @@
+<script lang="ts">
+    import Exercise from "../../domain/exercise";
+    import ExerciseFormList from "../ExerciseFormList.svelte";
+
+    let exercises = [new Exercise()];
+
+    const save = () => console.log(exercises);
+</script>
+
+<div class="grid grid-cols-2 mb-6">
+    <div class="pr-4">
+        <span>Rounds</span>
+        <input class="w-full py-1 px-2" type="text" />
+    </div>
+    <div>
+        <span>Rest between rounds</span>
+        <input class="w-full py-1 px-2" type="text" />
+    </div>
+    <div class="pr-4">
+        <span>Work time</span>
+        <input class="w-full py-1 px-2" type="text" />
+    </div>
+    <div>
+        <span>Rest time</span>
+        <input class="w-full py-1 px-2" type="text" />
+    </div>
+</div>
+
+<ExerciseFormList bind:exercises ignoreRepsFields={true} />
+
+<button class="button-new" on:click={save}>Save</button>
