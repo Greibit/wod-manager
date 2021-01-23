@@ -1,45 +1,30 @@
 <script lang="ts">
-    import Amrap from "./../components/circuits/Amrap.svelte";
-    import Emom from "./../components/circuits/Emom.svelte";
-    import ForTime from "./../components/circuits/ForTime.svelte";
-    import Intervals from "./../components/circuits/Intervals.svelte";
+    import CreateCircuitForm from "../components/circuits/create.svelte";
+    import type Circuit from "../domain/circuit/circuit";
 
-    let currentFormComponent;
+    let circuits: Circuit[] = [];
+    let creatingCircuit = false;
 
-    const circuitTypes = [
-        {
-            name: "AMRAP",
-            componentEl: Amrap,
-        },
-        {
-            name: "EMOM",
-            componentEl: Emom,
-        },
-        {
-            name: "FOR TIME",
-            componentEl: ForTime,
-        },
-        {
-            name: "INTERVALS",
-            componentEl: Intervals,
-        },
-    ];
+    const showCircuitForm = () => (creatingCircuit = true);
 
-    function loadComponent(component) {
-        currentFormComponent = component;
-    }
+    const addCircuit = (event: CustomEvent) => {
+        circuits = [...circuits, event.detail.circuit];
+        creatingCircuit = false;
+    };
 </script>
 
-<div class="flex justify-between">
-    {#each circuitTypes as circuitType}
-        <div
-            on:click={() => loadComponent(circuitType.componentEl)}
-            class="button-new"
-        >
-            {circuitType.name}
-        </div>
+<h1 class="text-4xl">Create WOD</h1>
+
+<h3 class="text-2xl">Circuits</h3>
+{#if circuits.length > 0}
+    {#each circuits as circuit}
+        {circuit.toString()}
     {/each}
-</div>
-{#if currentFormComponent}
-    <svelte:component this={currentFormComponent} />
+{:else}
+    No circuits created yet
+{/if}
+<button class="button-new" on:click={showCircuitForm}>Add Circuit</button>
+
+{#if true === creatingCircuit}
+    <CreateCircuitForm on:circuitCreated={addCircuit} />
 {/if}
