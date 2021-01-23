@@ -15,15 +15,29 @@
 
 <h1 class="text-4xl">Create WOD</h1>
 
-<h3 class="text-2xl">Circuits</h3>
-{#if circuits.length > 0}
-    {#each circuits as circuit}
-        {circuit.toString()}
-    {/each}
-{:else}
-    No circuits created yet
-{/if}
-<button class="button-new" on:click={showCircuitForm}>Add Circuit</button>
+<div class="bg-white mt-6 shadow">
+    <div class="py-2 flex border-b border-gray-300 px-6 mb-3">
+        <div class="text-2xl flex-grow" style="line-height: 42px;">
+            Circuits
+        </div>
+        <div>
+            <button class="button-new " on:click={showCircuitForm}>Add</button>
+        </div>
+    </div>
+    <div>
+        {#if circuits.length > 0}
+            {#each circuits as circuit}
+                <div class="border-b border-gray-200 p-6">
+                    {circuit.toString()}
+                </div>
+            {/each}
+        {:else}
+            <div class="border-b border-gray-200 p-6">
+                No circuits created yet
+            </div>
+        {/if}
+    </div>
+</div>
 
 {#if true === creatingCircuit}
     <CreateCircuitForm on:circuitCreated={addCircuit} />

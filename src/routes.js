@@ -9,7 +9,7 @@ const routes = [
         layout: Layout
     },
     {
-        name: 'wood',
+        name: 'wod',
         layout: Layout,
         nestedRoutes: [
             { name: 'create', component: CreateWod },

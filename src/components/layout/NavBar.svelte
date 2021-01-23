@@ -7,10 +7,10 @@
         <a
             href={`/`}
             class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white text-xl no-underline flex items-center hover:bg-gray-700"
-            >WOOD Manager</a
+            >WOD Manager</a
         >
         <a
-            href={`/wood/create`}
+            href={`/wod/create`}
             class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-700"
             >Create WOD</a
         >
