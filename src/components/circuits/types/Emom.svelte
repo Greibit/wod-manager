@@ -1,6 +1,7 @@
 <script lang="ts">
     import Emom from "../../../domain/circuit/emom";
     import ExerciseFormList from "../../exercises/ExerciseFormList.svelte";
+    import TimeField from "../../layout/TimeField.svelte";
 
     export let circuit = new Emom();
 </script>
@@ -16,11 +17,7 @@
     </div>
     <div>
         <span>Rest between rounds</span>
-        <input
-            class="w-full py-1 px-2"
-            type="text"
-            bind:value={circuit.restBetweenRounds}
-        />
+        <TimeField bind:value={circuit.restBetweenRounds} />
     </div>
 </div>
 
