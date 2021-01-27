@@ -1,5 +1,6 @@
 <script lang="ts">
     import CreateCircuitForm from "../components/circuits/create.svelte";
+    import { WodRepository } from "../database/wod-repository";
     import type Circuit from "../domain/circuit/circuit";
 
     let circuits: Circuit[] = [];
@@ -11,11 +12,13 @@
         circuits = [...circuits, event.detail.circuit];
         creatingCircuit = false;
     };
+
+    const saveWod = () => WodRepository.save({ circuits: circuits }).then(() => alert('OK'));
 </script>
 
 <div class="flex">
     <h1 class="text-4xl flex-grow">Create WOD</h1>
-    <button class="button-save">Save</button>
+    <button class="button-save" on:click={saveWod}>Save</button>
 </div>
 
 <div class="bg-white mt-6 shadow">
