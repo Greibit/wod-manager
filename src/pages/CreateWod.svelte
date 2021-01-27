@@ -13,7 +13,10 @@
     };
 </script>
 
-<h1 class="text-4xl">Create WOD</h1>
+<div class="flex">
+    <h1 class="text-4xl flex-grow">Create WOD</h1>
+    <button class="button-save">Save</button>
+</div>
 
 <div class="bg-white mt-6 shadow">
     <div class="py-2 flex border-b border-gray-300 px-6 mb-3">
@@ -21,7 +24,7 @@
             Circuits
         </div>
         <div>
-            <button class="button-new " on:click={showCircuitForm}>Add</button>
+            <button class="button-new" on:click={showCircuitForm}>Add</button>
         </div>
     </div>
     <div>
