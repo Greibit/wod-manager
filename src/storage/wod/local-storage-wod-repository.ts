@@ -1,5 +1,5 @@
-import type Wod from '../domain/wod/wod';
-import type WodRepository from '../domain/wod/wod-repository';
+import type Wod from '../../domain/wod/wod';
+import type WodRepository from '../../domain/wod/wod-repository';
 
 export default class LocalStorageWodRepository implements WodRepository {
 

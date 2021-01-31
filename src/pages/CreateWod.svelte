@@ -1,6 +1,6 @@
 <script lang="ts">
     import CreateCircuitForm from "../components/circuits/create.svelte";
-    import WodRepository from "../database/wod-repository-provider";
+    import WodRepository from "../storage/wod/wod-repository-provider";
     import type Circuit from "../domain/circuit/circuit";
 
     let circuits: Circuit[] = [];

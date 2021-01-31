@@ -1,6 +1,6 @@
-import type Wod from '../domain/wod/wod';
-import type WodRepository from '../domain/wod/wod-repository';
-import { Firestore } from "./config";
+import type Wod from '../../domain/wod/wod';
+import type WodRepository from '../../domain/wod/wod-repository';
+import { Firestore } from "../config";
 
 
 export default class FirebaseWodRepository implements WodRepository {
