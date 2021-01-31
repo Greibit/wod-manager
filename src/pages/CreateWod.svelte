@@ -2,19 +2,22 @@
     import CreateCircuitForm from "../components/circuits/create.svelte";
     import WodRepository from "../storage/wod/wod-repository-provider";
     import type Circuit from "../domain/circuit/circuit";
+    import { navigateTo } from "svelte-router-spa";
+    import Wod from "../domain/wod/wod";
 
+    const wod = new Wod();
     let circuits: Circuit[] = [];
     let creatingCircuit = false;
 
     const showCircuitForm = () => (creatingCircuit = true);
 
     const addCircuit = (event: CustomEvent) => {
-        circuits = [...circuits, event.detail.circuit];
+        wod.circuits = [...wod.circuits, event.detail.circuit];
         creatingCircuit = false;
     };
 
     const saveWod = () =>
-        WodRepository.save({ circuits: circuits }).then(() => alert("OK"));
+        WodRepository.save(wod).then(() => navigateTo(`/wod/list`));
 </script>
 
 <div class="flex">
@@ -32,17 +35,15 @@
         </div>
     </div>
     <div>
-        {#if circuits.length > 0}
-            {#each circuits as circuit}
-                <div class="border-b border-gray-200 p-6">
-                    {circuit.toString()}
-                </div>
-            {/each}
+        {#each wod.circuits as circuit}
+            <div class="border-b border-gray-200 p-6">
+                {circuit.toString()}
+            </div>
         {:else}
             <div class="border-b border-gray-200 p-6">
                 No circuits created yet
             </div>
-        {/if}
+        {/each}
     </div>
 </div>
 

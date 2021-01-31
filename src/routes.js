@@ -1,5 +1,6 @@
 import Layout from './components/layout/Layout.svelte'
 import CreateWod from './pages/CreateWod.svelte'
+import WodList from './pages/WodList.svelte'
 import Dashboard from './pages/Dashboard.svelte'
 
 const routes = [
@@ -13,6 +14,7 @@ const routes = [
         layout: Layout,
         nestedRoutes: [
             { name: 'create', component: CreateWod },
+            { name: 'list', component: WodList },
         ]
     },
 ]

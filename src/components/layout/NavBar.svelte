@@ -10,9 +10,9 @@
             >WOD Manager</a
         >
         <a
-            href={`/wod/create`}
+            href={`/wod/list`}
             class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-700"
-            >Create WOD</a
+            >WOD List</a
         >
     </div>
 </nav>

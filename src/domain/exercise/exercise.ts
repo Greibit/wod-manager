@@ -1,3 +1,5 @@
+import { plainToClass } from "class-transformer";
+
 export default class Exercise {
 
     name: string;
@@ -7,4 +9,6 @@ export default class Exercise {
         this.name = name;
         this.reps = reps;
     }
+
+    createFromPlain = plain => plainToClass(Exercise, plain);
 }
