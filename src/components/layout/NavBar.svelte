@@ -14,5 +14,10 @@
             class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-700"
             >WOD List</a
         >
+        <a
+            href={`/exercise/list`}
+            class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-700"
+            >Exercise List</a
+        >
     </div>
 </nav>
