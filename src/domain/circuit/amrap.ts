@@ -1,13 +1,13 @@
-import { plainToClass } from "class-transformer";
-import type Exercise from "../exercise/exercise";
+import { plainToClass } from 'class-transformer';
 import type Circuit from './circuit';
+import type CircuitExercise from './circuit-exercise';
 
 export default class Amrap implements Circuit {
 
     type = `Amrap`;
 
     totalTime: string;
-    exercises: Exercise[] = [];
+    exercises: CircuitExercise[] = [];
 
     toString = () => `AMRAP - ${this.totalTime} - ${this.exercises.length} exercises`;
 

@@ -1,6 +1,6 @@
-import { plainToClass } from "class-transformer";
-import type Exercise from "../exercise/exercise";
+import { plainToClass } from 'class-transformer';
 import type Circuit from './circuit';
+import type CircuitExercise from './circuit-exercise';
 
 export default class Intervals implements Circuit {
 
@@ -10,7 +10,7 @@ export default class Intervals implements Circuit {
     restBetweenRounds: string;
     workTime: string;
     restTime: string;
-    exercises: Exercise[] = [];
+    exercises: CircuitExercise[] = [];
 
     toString = () => `INTERVALS - ${this.rounds} rounds - ${this.workTime}/${this.restTime} - ${this.exercises.length} exercises`;
 

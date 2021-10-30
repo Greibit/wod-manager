@@ -3,11 +3,9 @@ import { plainToClass } from "class-transformer";
 export default class Exercise {
 
     name: string;
-    reps: string;
 
-    constructor(name, reps = '') {
+    constructor(name) {
         this.name = name;
-        this.reps = reps;
     }
 
     toString = () => this.name;

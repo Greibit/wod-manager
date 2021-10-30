@@ -1,6 +1,6 @@
-import { plainToClass } from "class-transformer";
-import type Exercise from "../exercise/exercise";
+import { plainToClass } from 'class-transformer';
 import type Circuit from './circuit';
+import type CircuitExercise from './circuit-exercise';
 
 export default class Emom implements Circuit {
 
@@ -8,8 +8,8 @@ export default class Emom implements Circuit {
 
     rounds: string;
     restBetweenRounds: string;
-    exercises: Exercise[] = [];
 
+    exercises: CircuitExercise[] = [];
     toString = () => `EMOM - ${this.rounds} rounds - ${this.exercises.length} exercises`;
 
     static createFromPlain = plain => plainToClass(Emom, plain);

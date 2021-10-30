@@ -1,16 +1,16 @@
 <script lang="ts">
-    import Exercise from "../../domain/exercise/exercise";
+    import CircuitExercise from '../../domain/circuit/circuit-exercise';
 
-    export let exercises: Exercise[];
+    export let exercises: CircuitExercise[];
     export let ignoreRepsFields = false;
 
     const exerciseColWithClass = ignoreRepsFields ? "flex-grow" : "w-7/12";
 
-    const addExercise = () => {
-        exercises = [...exercises, new Exercise()];
+    const addCircuitExercise = () => {
+        exercises = [...exercises, new CircuitExercise()];
     };
 
-    const removeExercise = (index: number) => {
+    const removeCircuitExercise = (index: number) => {
         exercises = exercises.filter((ex, i) => index !== i);
     };
 </script>
@@ -18,7 +18,7 @@
 <div>
     <div class="flex w-full mb-3 h-8">
         <div class="mr-4 {exerciseColWithClass}"> 
-            Exercise
+            CircuitExercise
         </div>
         {#if !ignoreRepsFields}
             <div class="mr-4 flex-grow">Reps</div>
@@ -26,7 +26,7 @@
         <div class="w-8">
             <button
                 class="w-full h-full bg-indigo-700 text-white text-sm"
-                on:click={addExercise}>+</button
+                on:click={addCircuitExercise}>+</button
             >
         </div>
     </div>
@@ -51,7 +51,7 @@
             <div class="w-8">
                 <button
                     class="w-full h-full bg-gray-500 text-white text-sm"
-                    on:click={() => removeExercise(i)}>x</button
+                    on:click={() => removeCircuitExercise(i)}>x</button
                 >
             </div>
         </div>
